@@ -1,0 +1,156 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END CSS RESET */
+
+/* ROOT */
+:root{
+    --teal: #326970;
+    --blue: #05D4F0;
+    --green: #81A32A;
+    --pink: #F0007B;
+    --purple: #510171;
+    --black: #000000;
+    --white: #fff;
+
+    --header-font: "Jersey 20", "sans-serif";
+    --body-font: "Chakra Petch", "sans-serif";
+
+    --box-shadow: -6px 6px 10px var(--blue);
+    --box-shadow-sm: -3px 3px 5px var(--blue);
+}
+/* END ROOT */
+
+body{
+    background-color: var(--green);
+    font-family: var(--body-font);
+    font-size: 2rem;
+    line-height: 2rem;
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    background-color: var(--pink);
+    font-family: var(--header-font);
+}
+
+h1{
+    font-size: 6rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+h2{
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--teal);
+    color: var(--white);
+    font-size: 2rem;
+}
+
+p{
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--purple);
+    color: var(--white);
+    border-bottom: 3px solid var(--teal);
+}
+
+img{
+    border: 5px dashed var(--blue);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px 60px;
+}
+
+
+/* CARD STYLES */
+
+#flip-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: stretch;
+    gap: 16px;
+    margin: 2rem;
+    perspective: 1000px;
+}
+
+.flip-card:hover, .flip-card2:hover, .flip-card3:hover, .flip-card4:hover, .flip-card5:hover, .flip-card6:hover, .flip-card7:hover, .flip-card8:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-card, .flip-card2, .flip-card3, .flip-card4, .flip-card5, .flip-card6, .flip-card7, .flip-card8 {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 2s;
+}
+
+img, .front, .back, .front2, .back2, .front3, .back3, .front4, .back4, .front5, .back5, .front6, .front7, .front8{
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back5, .back6, .back7, .back8{
+    backface-visibility: hidden;
+}
+
+.back, .back2, .back3, .back4, .back5, .back6, .back7, .back8{
+    background-color: var(--blue);
+    color: var(--black);
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    margin: 2rem;
+    height: 200px;
+    width: 200px;
+    transform: rotateY(180deg);
+    border-radius: 40px 20px;
+    box-shadow: var(--box-shadow-sm);
+}
+
